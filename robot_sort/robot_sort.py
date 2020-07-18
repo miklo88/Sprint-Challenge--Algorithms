@@ -97,7 +97,35 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        pass
+        # pass
+                # Fill this out
+        '''
+        "UPER"
+        i honestly have no clue what the hell to do. 
+        I know its a giant class.
+        each method controls a part of the robot.
+        so i have to call each method to complete this sort?
+        MAS UPER
+        after looking at the cards and talking to myself using the methods provided
+        its a lot easier to understand the procedure that needs to happen
+        '''
+        '''
+        METHODS I CAN USE TO MOVE ROBOT
+        i know i'm bubble sorting because i've been on that struggle bus. this is just a new level of it.
+        bubble sort may take too long for the list. 
+
+        can_move_right - if yes move, no, i'm at the end
+        can_move_left - if yes, true. no, i'm at beginning
+        move_right - if can_move_right is True
+        move_left - if can_move_left is True
+        compare_item - compare for every step to the right. unless can_move_right is false
+        swap_item - if compare_item is true
+
+        set_light_on - when does light come on? when move right/eft is true? when compare is true?
+        set_light_off - turn light off after comparing?
+        light_is_on - after swap? when move left/right is true? 
+        '''
+        # while 
 
 
 if __name__ == "__main__":
