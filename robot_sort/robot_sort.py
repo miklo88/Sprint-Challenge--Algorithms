@@ -96,36 +96,30 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        # pass
-                # Fill this out
-        '''
-        "UPER"
-        i honestly have no clue what the hell to do. 
-        I know its a giant class.
-        each method controls a part of the robot.
-        so i have to call each method to complete this sort?
-        MAS UPER
-        after looking at the cards and talking to myself using the methods provided
-        its a lot easier to understand the procedure that needs to happen
-        '''
-        '''
-        METHODS I CAN USE TO MOVE ROBOT
-        i know i'm bubble sorting because i've been on that struggle bus. this is just a new level of it.
-        bubble sort may take too long for the list. 
-
-        can_move_right - if yes move, no, i'm at the end
-        can_move_left - if yes, true. no, i'm at beginning
-        move_right - if can_move_right is True
-        move_left - if can_move_left is True
-        compare_item - compare for every step to the right. unless can_move_right is false
-        swap_item - if compare_item is true
-
-        set_light_on - when does light come on? when move right/eft is true? when compare is true?
-        set_light_off - turn light off after comparing?
-        light_is_on - after swap? when move left/right is true? 
-        '''
-        # while 
+        # while loopin
+        #turn on the robot
+        self.set_light_on()
+        #while the roboto is on light is on can be off
+        while self.light_is_on():
+            self.set_light_off()
+            #if the robot can move right move right
+            while self.can_move_right():
+                self.move_right()
+                #if you run into an item to compare, if true, swap it and set light on
+                if self.compare_item() == 1:
+                    self.swap_item()
+                    self.set_light_on()
+            #while the robot can move left, be able to swap item if right's move is true
+            while self.can_move_left():
+                self.swap_item()
+                self.move_left()
+            #if you need to swap an item left you are decrementing and you can swap it left. also turn on the light
+                if self.compare_item() == -1:
+                    self.swap_item()
+                    self.set_light_on()
+                self.move_right()
+                self.swap_item()
+                self.move_left() 
 
 
 if __name__ == "__main__":
@@ -138,3 +132,31 @@ if __name__ == "__main__":
 
     robot.sort()
     print(robot._list)
+
+
+'''
+"UPER"
+i honestly have no clue what the hell to do. 
+I know its a giant class.
+each method controls a part of the robot.
+so i have to call each method to complete this sort?
+MAS UPER
+after looking at the cards and talking to myself using the methods provided
+its a lot easier to understand the procedure that needs to happen
+'''
+'''
+METHODS I CAN USE TO MOVE ROBOT
+i know i'm bubble sorting because i've been on that struggle bus. this is just a new level of it.
+bubble sort may take too long for the list. 
+
+can_move_right - if yes move, no, i'm at the end
+can_move_left - if yes, true. no, i'm at beginning
+move_right - if can_move_right is True
+move_left - if can_move_left is True
+compare_item - compare for every step to the right. unless can_move_right is false
+swap_item - if compare_item is true
+
+set_light_on - when does light come on? when move right/eft is true? when compare is true?
+set_light_off - turn light off after comparing?
+light_is_on - after swap? when move left/right is true? 
+'''
